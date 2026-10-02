@@ -7,7 +7,7 @@
   <meta name="description" content="Ninth Life — an independent game and app studio.">
   <style>
     :root {
-      --bg: #050507;
+      --bg: #000000;
       --purple: #b24bf3;
       --blue: #3ec9f0;
       --text: #e8e8ee;
@@ -32,19 +32,16 @@
       position: relative;
       overflow-x: hidden;
     }
-    /* soft ambient glow behind everything, echoing the logo's neon */
+    /* color only at the far edges/corners; pure black through the center where the logo sits */
     body::before {
       content: "";
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      width: 1100px;
-      height: 700px;
-      transform: translate(-50%, -50%);
+      position: fixed;
+      inset: 0;
       background:
-        radial-gradient(circle at 30% 50%, rgba(178, 75, 243, 0.14), transparent 60%),
-        radial-gradient(circle at 70% 50%, rgba(62, 201, 240, 0.14), transparent 60%);
-      filter: blur(10px);
+        radial-gradient(ellipse 70% 60% at 0% 0%, rgba(178, 75, 243, 0.16), transparent 55%),
+        radial-gradient(ellipse 70% 60% at 100% 100%, rgba(62, 201, 240, 0.16), transparent 55%),
+        radial-gradient(ellipse 60% 70% at 100% 0%, rgba(62, 201, 240, 0.1), transparent 55%),
+        radial-gradient(ellipse 60% 70% at 0% 100%, rgba(178, 75, 243, 0.1), transparent 55%);
       z-index: 0;
       pointer-events: none;
     }
@@ -134,8 +131,8 @@
   <img class="logo" src="logo.png" alt="Ninth Life">
 
   <p class="blurb">
-    <strong>Ninth Life</strong> is an independent studio making small, focused games and apps —
-    built nights and weekends, shipped when they're ready, not before.
+    <strong>Ninth Life</strong> is an independent studio making small games and apps —
+    retro-inspired, nights-and-weekends built, and rooted in ideas close to home.
   </p>
 
   <div class="apps">
